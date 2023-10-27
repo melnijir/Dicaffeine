@@ -1,0 +1,9 @@
+Package: dicaffeine-theme
+Version: 0.0.1
+Architecture: amd64
+Maintainer: Jiri Melnikov <jiri@melnikoff.org>
+Depends: plymouth, libc6, libplymouth5
+Section: misc
+Priority: optional
+Homepage: https://dicaffeine.com
+Description: Boot theme for Dicaffeine player

@@ -1,0 +1,53 @@
+ /**************************************************************************
+ *
+ * Dicaffeine logo theme
+ *
+ * Written by: Jiri Melnikov <jiri@melnikoff.org>
+ *
+ **************************************************************************/
+
+screen_width = Window.GetWidth();
+screen_height = Window.GetHeight();
+screen_x = Window.GetX();
+screen_y = Window.GetY();
+
+background_image = Image("background.png");
+logo_image = Image("logo.png");
+
+
+/* Background sprite */
+
+screen_ratio = screen_height / screen_width;
+background_ratio = background_image.GetHeight() / background_image.GetWidth();
+factor = 0;
+if (screen_ratio > background_ratio) {
+	factor = screen_height / background_image.GetHeight();
+} else {
+	factor = screen_width / background_image.GetWidth();
+}
+scaled = background_image.Scale(background_image.GetWidth() * factor, background_image.GetHeight() * factor);
+background_sprite = Sprite(scaled);
+background_sprite.SetX(screen_x + screen_width / 2 - scaled.GetWidth() / 2);
+background_sprite.SetY(screen_y + screen_height / 2 - scaled.GetHeight() / 2);
+
+
+/* Logo sprite */
+
+pos_x = screen_width/2 - logo_image.GetWidth()/2;
+pos_y = screen_height/2 - logo_image.GetHeight()/2;
+
+logo_sprite = Sprite(logo_image);
+logo_sprite.SetX(pos_x);
+logo_sprite.SetY(pos_y);
+
+/* Set visibilty */
+background_sprite.SetOpacity(1);
+background_sprite.SetZ(10);
+logo_sprite.SetOpacity(1);
+logo_sprite.SetZ(20);
+
+fun refresh_callback () {
+  /* Nothing to see here */
+}
+
+Plymouth.SetRefreshFunction(refresh_callback);

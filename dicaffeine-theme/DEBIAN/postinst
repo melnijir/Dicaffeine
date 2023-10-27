@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+case "${1}" in
+	configure)
+        # Add default alternatives so that if we don't have any ubuntu themes install, we still show up one
+        update-alternatives \
+            --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+            /usr/share/plymouth/themes/dicaffeine/dicaffeine.plymouth 70
+        update-alternatives  \
+            --config default.plymouth
+        
+		if which update-initramfs >/dev/null 2>&1; then
+			update-initramfs -u
+		fi
+		;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+
+		;;
+
+	*)
+		echo "postinst called with unknown argument \`${1}'" >&2
+		exit 1
+		;;
+esac
+
+
+
+exit 0

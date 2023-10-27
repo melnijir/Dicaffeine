@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -e
+
+case "${1}" in
+	remove)
+		if which update-initramfs >/dev/null 2>&1; then
+			update-initramfs -u
+		fi
+		;;
+
+	purge|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+
+		;;
+
+	*)
+		echo "postrm called with unknown argument \`${1}'" >&2
+		exit 1
+		;;
+esac
+
+
+
+exit 0

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+if [ "x$1" = xremove ]; then
+	update-alternatives \
+		--remove default.plymouth /usr/share/plymouth/themes/dicaffeine/dicaffeine.plymouth
+fi
+
+

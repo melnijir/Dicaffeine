@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Dicaffeine
+Description=A theme for the Dicaffeine player
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/dicaffeine
+ScriptFile=/usr/share/plymouth/themes/dicaffeine/dicaffeine.script
