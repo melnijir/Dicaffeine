@@ -7,6 +7,6 @@ Please use this repository for reporting any issues.
 
 ## Opensource parts:
 
-- libyuri fork (includes RTMP/pulse audio): https://github.com/melnijir/libyuri
+- libyuri fork (includes RTMP/pulse audio): [https://github.com/melnijir/libyuri](https://github.com/melnijir/libyuri/tree/dicaffeine)
 - ndi input/output module for libyuri: https://github.com/melnijir/libyuri_ndi_module
 
